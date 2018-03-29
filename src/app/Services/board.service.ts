@@ -9,9 +9,9 @@ export class BoardService {
   boards: Board[] = [];
   constructor() {}
 
-  createBoard(size: Number = 5): BoardService {
+  createBoard(size: number = 5): BoardService {
     // create tiles
-    const tiles = [];
+    let tiles = [];
     for (let i = 0; i < size; i++) {
       tiles[i] = [];
       for (let j = 0; j < size; j++) {
@@ -38,7 +38,7 @@ export class BoardService {
   // function to return the tiles after a value is insterted into a random tile in the tile array
   randomShips(tiles: Object[], len: number): Object[] {
     len = len - 1;
-    let ranRow = this.getRandomInt(0, len),
+    const ranRow = this.getRandomInt(0, len),
         ranCol = this.getRandomInt(0, len);
 
         if (tiles[ranRow][ranCol].value == 1) {
