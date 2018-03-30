@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class BoardService {
 
-  playerId: number = 1;
+  playerId = 1;
   boards: Board[] = [];
   constructor() {}
 
@@ -41,7 +41,7 @@ export class BoardService {
     const ranRow = this.getRandomInt(0, len),
         ranCol = this.getRandomInt(0, len);
 
-        if (tiles[ranRow][ranCol].value == 1) {
+        if (tiles[ranRow][ranCol].value === 1) {
           return this.randomShips(tiles, len);
         } else {
           tiles[ranRow][ranCol].value = 1;

@@ -3,8 +3,8 @@ import { BoardService } from './Services/board.service';
 import { Component, ViewContainerRef } from '@angular/core';
 import {ToastsManager} from 'ng2-toastr/ng2-toastr';
 
-const NUM_PLAYERS: number = 2;
-const BOARD_SIZE: number = 6;
+const NUM_PLAYERS = 2;
+const BOARD_SIZE = 6;
 
 
 @Component({
@@ -14,9 +14,9 @@ const BOARD_SIZE: number = 6;
   providers: [BoardService]
 })
 export class AppComponent {
-  canPlay: boolean = true;
-  player: number = 0;
-  players: number = 0;
+  canPlay = true;
+  player = 0;
+  players = 0;
   gameId: string;
   gameUrl: string =  location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '');
 
@@ -32,7 +32,7 @@ export class AppComponent {
         // event handler for click event on
       // each tile - fires torpedo at selected tile
       fireTorpedo(e: any): AppComponent {
-        let id = e.target.id,
+        const id = e.target.id,
           boardId = id.substring(1, 2),
           row = id.substring(2, 3), col = id.substring(3, 4),
           tile = this.boards[boardId].tiles[row][col];
