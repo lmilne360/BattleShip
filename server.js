@@ -18,7 +18,7 @@ const pusher = new Pusher({
 });
 
 // Serve our Static Files
-app.use(express.static('./dist/'));
+app.use(express.static(__dirname + '/dist/'));
 
 // CORS
 app.all('/*', (req, res, next) => {
@@ -40,9 +40,9 @@ app.all('/*', (req, res, next) => {
 
 // Redirect all other request to view
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, './dist/index.html'));
+    res.sendFile(path.join(__dirname + '/dist/index.html'));
 });
 
 // Start Server
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Listening at  http://localhost:${port}`));
+app.listen(port, () => console.log(`Node app is running on port ${port}`));
