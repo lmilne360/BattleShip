@@ -41,7 +41,7 @@ export class BoardService {
     const ranRow = this.getRandomInt(0, len),
         ranCol = this.getRandomInt(0, len);
 
-        if (tiles[ranRow][ranCol].value === 1) {
+        if (tiles[ranRow][ranCol].value == 1) {
           return this.randomShips(tiles, len);
         } else {
           tiles[ranRow][ranCol].value = 1;
