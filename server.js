@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const Pusher = requrie('pusher');
+var Pusher = require('pusher');
 const crypto = require('crypto');
 
 const app = express();

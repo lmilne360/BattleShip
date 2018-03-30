@@ -3,7 +3,7 @@ import { BoardService } from './Services/board.service';
 import { Component, ViewContainerRef } from '@angular/core';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
-declare const Pusher: any;
+declare var Pusher: any;
 const NUM_PLAYERS = 2;
 const BOARD_SIZE = 6;
 
@@ -44,13 +44,13 @@ export class AppComponent {
       location.search = location.search ? '&id=' + id : 'id=' + id;
     }
     this.gameId = id;
+  
 
     // init pusher
     const pusher = new Pusher('df4a008b26afcfc9d53f', {
       authEndpoint: '/pusher/auth',
       cluster: 'mt1'
     });
-
     // Bind to pusher presence channel
     this.pusherChannel = pusher.subscribe(this.gameId);
     this.pusherChannel.bind('pusher:member_added', member => {
