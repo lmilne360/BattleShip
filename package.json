@@ -8,6 +8,7 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
+    "clean": "tslint --fix src/app/**/*.ts -t verbose",
     "e2e": "ng e2e"
   },
   "private": true,
