@@ -83,9 +83,9 @@ export class AppComponent {
   // initialise player and set turn
   setPlayer(players: number = 0): AppComponent {
     this.player = players - 1;
-    if (players === 1) {
+    if (players == 1) {
       this.canPlay = true;
-    } else if (players === 2) {
+    } else if (players == 2) {
       this.canPlay = false;
     }
     return this;
@@ -103,7 +103,7 @@ export class AppComponent {
       return;
     }
 
-    if (tile.value === 1) {
+    if (tile.value == 1) {
       this.toastr.success('You got this.', 'HURRAAA! YOU SANK A SHIP!');
       this.boards[boardId].tiles[row][col].status = 'win';
       this.boards[this.player].player.score++;
@@ -120,7 +120,7 @@ export class AppComponent {
       player: this.player,
       score: this.boards[this.player].player.score,
       boardId: boardId,
-      board: this.boards[boardId]
+      board: this.boards[boardId],
     });
     return this;
   }
@@ -134,7 +134,7 @@ export class AppComponent {
   }
 
   checkValidHit(boardId: number, tile: any): boolean {
-    if (boardId === this.player) {
+    if (boardId == this.player) {
       this.toastr.error(
         'Don\'t commit suicide.',
         'You can\'t hit your own board.'
@@ -149,7 +149,7 @@ export class AppComponent {
       this.toastr.error('A bit too eager.', 'It\'s not your turn to play.');
       return false;
     }
-    if (tile.value === 'X') {
+    if (tile.value == 'X') {
       this.toastr.error('Don\'t waste your torpedos.', 'You already shot here.');
       return false;
     }
