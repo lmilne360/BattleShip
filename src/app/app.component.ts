@@ -44,7 +44,7 @@ export class AppComponent {
       location.search = location.search ? '&id=' + id : 'id=' + id;
     }
     this.gameId = id;
-  
+
 
     // init pusher
     const pusher = new Pusher('df4a008b26afcfc9d53f', {
