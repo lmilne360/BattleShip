@@ -2,13 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
+## Live Demo
+Live version of this application can be found [here](https://lmilne-battle-ship.herokuapp.com/)
+
 ## To Do
 - [ ] Update UI
 - [ ] Add button to copy link to clipboard
 - [ ] Allow 'New Game' to generate new game with both players
 
 ## Getting Started
-Clone this reposity, change into the project directory and run `yarn install` to install all dependencies. Alternatively run `npm install` if using npm as your package management tool
+Clone this repository, change into the project directory and run `yarn install` to install all dependencies. Alternatively run `npm install` if using npm as your package management tool
 
 ## Build
 
